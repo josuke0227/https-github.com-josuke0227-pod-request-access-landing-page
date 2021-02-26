@@ -11,6 +11,7 @@ export default function index() {
           href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/assets/favicon-32x32.png" />
       </Head>
       <Layout>
         <Contents />
