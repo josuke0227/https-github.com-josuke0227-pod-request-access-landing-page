@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Contents from "../components/Contents";
 import Layout from "../components/Layout";
+import { getData } from "../lib/getTextData";
 
-export default function index() {
+export default function index({ textData }) {
   return (
     <>
       <Head>
@@ -14,8 +15,16 @@ export default function index() {
         <link rel="icon" href="/assets/favicon-32x32.png" />
       </Head>
       <Layout>
-        <Contents />
+        <Contents textData={textData} />
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const textData = getData(["title", "text", "buttonText"]);
+
+  return {
+    props: { textData },
+  };
 }

@@ -16,15 +16,14 @@ const Wrapper = styled.div`
   }
 `;
 
-export default function Contents() {
+export default function Contents({ textData }) {
   const size = useWindowSize();
-  console.log(size);
 
   return (
     <Wrapper>
       <Logo />
       <HostImage size={size} />
-      <TextContents />
+      <TextContents textData={textData} />
       <DotsBg />
     </Wrapper>
   );
