@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 const StyledHostImage = styled.img`
   top: 0;
   right: 0;
+
 }`;
 
 export default function HostImage({ size }) {

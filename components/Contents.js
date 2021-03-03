@@ -6,9 +6,10 @@ import TextContents from "./TextContents";
 import useWindowSize from "../hooks/useWindowSize";
 
 const Wrapper = styled.div`
-  background-color: coral;
+  background-color: inheirt;
   position: relative;
   width: 100%;
+  height: 640px;
   text-align: end;
 
   @media (max-width: 1050px) {

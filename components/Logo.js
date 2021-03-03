@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 
 const StyledImage = styled.img`
   position: absolute;
-  top: -23px;
+  transform: translateY(-50%);
   left: 0;
 
   @media (max-width: 1050px) {
-    top: 0;
+    transform: translateY(100%);
   }
 `;
 

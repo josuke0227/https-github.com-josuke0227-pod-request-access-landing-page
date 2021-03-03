@@ -7,7 +7,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-left: 10rem;
+  padding-left: 10.5rem;
+  background-color: var(--navy);
 
   @media (max-width: 1050px) {
     padding-left: 3rem;
