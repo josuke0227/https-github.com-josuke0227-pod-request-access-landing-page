@@ -8,6 +8,10 @@ const StyledImage = styled.img`
   @media (max-width: 1050px) {
     transform: translateY(100%);
   }
+  @media (max-width: 425px) {
+    transform: unset;
+    position: unset;
+  }
 `;
 
 export default function Logo() {

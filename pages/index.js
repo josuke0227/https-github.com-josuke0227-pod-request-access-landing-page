@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Contents from "../components/Contents";
 import Layout from "../components/Layout";
+import MobileLayout from "../components/MobileLayout";
 import { getData } from "../lib/getTextData";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function index({ textData }) {
+  const size = useWindowSize();
+
   return (
     <>
       <Head>

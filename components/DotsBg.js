@@ -11,6 +11,10 @@ const StyledImage = styled.img`
     bottom: 0;
     transform: translateY(0);
   }
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 export default function DotsBg() {

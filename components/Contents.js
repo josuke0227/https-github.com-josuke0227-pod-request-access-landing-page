@@ -15,17 +15,26 @@ const Wrapper = styled.div`
   @media (max-width: 1050px) {
     height: 100%;
   }
+
+  @media (max-width: 425px) {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+  }
 `;
 
 export default function Contents({ textData }) {
   const size = useWindowSize();
 
   return (
-    <Wrapper>
-      <Logo />
-      <HostImage size={size} />
-      <TextContents textData={textData} />
-      <DotsBg />
-    </Wrapper>
+    <>
+      <Wrapper>
+        {size.width > 425 && <Logo />}
+        <HostImage size={size} />
+        <TextContents textData={textData} size={size} />
+        <DotsBg />
+      </Wrapper>
+    </>
   );
 }

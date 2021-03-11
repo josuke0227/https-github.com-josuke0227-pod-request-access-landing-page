@@ -12,6 +12,11 @@ const StyledForm = styled.form`
   align-items: center;
   justify-content: flex-end;
   margin: 40px 0 64px 0;
+
+  @media (max-width: 425px) {
+    width: 100%;
+    height: 46px;
+  }
 `;
 
 const UIWrapper = styled.div`
@@ -31,6 +36,14 @@ const StyledButton = styled.button`
   :hover {
     background-color: var(--light-green);
   }
+
+  @media (max-width: 425px) {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    transform: translateY(120%);
+    height: 46px;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -48,6 +61,11 @@ const StyledInput = styled.input`
   :focus {
     outline: none;
   }
+
+  @media (max-width: 425px) {
+    margin-top: 10px;
+    width: 100%;
+  }
 `;
 
 const MessageWrapper = styled.div`
@@ -57,7 +75,7 @@ const MessageWrapper = styled.div`
   visibility: ${(props) => (props.errors === null ? "hidden" : "visible")};
 `;
 
-export default function Form({ placeholder, textData }) {
+export default function Form({ placeholder, textData, size }) {
   const [data, setData] = useState({ email: "" });
   const [errors, setErrors] = useState(null);
 
