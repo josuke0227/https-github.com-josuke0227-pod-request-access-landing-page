@@ -5,12 +5,14 @@ const StyledImage = styled.img`
   transform: translateY(-50%);
   left: 0;
 
-  @media (max-width: 1050px) {
+  @media only screen and (max-width: 1050px) {
     transform: translateY(100%);
   }
-  @media (max-width: 425px) {
-    transform: unset;
-    position: unset;
+
+  @media only screen and (max-width: 425px) {
+    position: static;
+    transform: translateY(0);
+    margin-top: 62px;
   }
 `;
 

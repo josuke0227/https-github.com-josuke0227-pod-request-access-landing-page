@@ -5,32 +5,35 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  @media (max-width: 425px) {
-    margin-top: 33px;
+  @media only screen and (max-width: 425px) {
+    gap: 2rem;
+    justify-content: center;
   }
 `;
 
-export default function TextContentsFooter({ mobile }) {
+export default function TextContentsFooter({ size }) {
+  const mobile = size.width <= 425;
+
   return (
     <IconWrapper>
       <img
         className="min-height"
-        style={mobile && { transform: "scale(0.58) translateX(-20%)" }}
+        style={mobile ? { width: "56px" } : null}
         src="/assets/desktop/spotify.svg"
       />
       <img
         className={`${mobile ? "" : "ml-large"} min-height`}
-        style={mobile && { transform: "scale(0.58) translateX(-30%)" }}
+        style={mobile ? { width: "45px" } : null}
         src="/assets/desktop/apple-podcast.svg"
       />
       <img
         className={`${mobile ? "" : "ml-large"} min-height`}
-        style={mobile && { transform: "scale(0.58) translateX(-30%)" }}
+        style={mobile ? { width: "73px" } : null}
         src="/assets/desktop/google-podcasts.svg"
       />
       <img
         className={`${mobile ? "" : "ml-small"} min-height `}
-        style={mobile && { transform: "scale(0.58) translateX(-58%)" }}
+        style={mobile ? { width: "77px" } : null}
         src="/assets/desktop/pocket-casts.svg"
       />
     </IconWrapper>

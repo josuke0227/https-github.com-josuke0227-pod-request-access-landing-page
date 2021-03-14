@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-import Logo from "./Logo";
 import EmailForm from "./EmailForm";
+import Logo from "./Logo";
 import TextContentsFooter from "./TextContentsFooter";
-import ResponsiveTextContentsFooter from "./ResponsiveTextContentsFooter";
 
 const Container = styled.div`
   background-color: var(--navy);
@@ -12,16 +11,20 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
 
-  @media (max-width: 1050px) {
+  @media only screen and (max-width: 1050px) {
     width: 87%;
     top: 25%;
   }
 
-  @media (max-width: 425px) {
-    background-color: transparent;
-    width: 100%;
-    position: unset;
+  @media only screen and (max-width: 425px) {
+    padding: 0 20px;
+    background: var(--screen);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
+}
 `;
 
 const TextWrapper = styled.div`
@@ -29,9 +32,14 @@ const TextWrapper = styled.div`
   bottom: 0;
   left: 0;
 
-  @media (max-width: 1050px) {
+  @media only screen and (max-width: 1050px) {
     position: relative;
-    background-color: transparent;
+  }
+
+  @media only screen and (max-width: 425px) {
+    position: static;
+    transform: translateY(0);
+    margin-top: 57px;
   }
 `;
 
@@ -40,10 +48,9 @@ const StyledH1 = styled.h1`
   text-align: left;
   font-size: 52px;
 
-  @media (max-width: 425px) {
-    font-size: 26px;
+  @media only screen and (max-width: 425px) {
+    font-size: 27px;
     text-align: center;
-    line-height: 38px;
   }
 `;
 
@@ -56,25 +63,16 @@ const StyledParagraph = styled.p`
   line-height: 28px;
   margin-top: 24px;
 
-  @media (max-width: 425px) {
-    line-height: 25px;
+  @media only screen and (max-width: 425px) {
     font-size: 15px;
+    line-height: 25px;
     text-align: center;
-    margin: 0;
-    width: 100%;
+    margin: 16px auto 33px;
+    width: 85%;
   }
 `;
 
-const LogoWrapper = styled.div`
-  text-align: center;
-  margin-bottom: 57px;
-`;
-
-const TitleWrapper = styled.div`
-  @media (max-width: 425px) {
-    margin-bottom: 1rem;
-  }
-`;
+const TitleWrapper = styled.div``;
 
 export default function TextContents({ textData, size }) {
   const charArr = textData.title.toUpperCase().split(" ");
@@ -83,18 +81,23 @@ export default function TextContents({ textData, size }) {
 
   const placeholder = "Email Address";
 
-  const width = size.width;
+  const mobile = size.width <= 425;
 
   return (
     <Container className="bg-color">
+      {size.width <= 425 && <Logo />}
       <TextWrapper>
-        <LogoWrapper>{size.width <= 425 && <Logo />}</LogoWrapper>
         <TitleWrapper>
           <StyledH1 style={{ color: "var(--green)" }}>{greenText}</StyledH1>
           <StyledH1 style={{ color: "var(--white)" }}>{whiteText}</StyledH1>
         </TitleWrapper>
-        <TextContentsFooter />
-        <EmailForm placeholder={placeholder} textData={textData} size={size} />
+        <StyledParagraph>{textData.text}</StyledParagraph>
+        <TextContentsFooter size={size} />
+        <EmailForm
+          placeholder={placeholder}
+          textData={textData}
+          mobile={mobile}
+        />
       </TextWrapper>
     </Container>
   );

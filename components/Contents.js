@@ -12,25 +12,26 @@ const Wrapper = styled.div`
   height: 640px;
   text-align: end;
 
-  @media (max-width: 1050px) {
+  @media only screen and (max-width: 1050px) {
     height: 100%;
-  }
-
-  @media (max-width: 425px) {
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    position: absolute;
   }
 `;
 
 export default function Contents({ textData }) {
   const size = useWindowSize();
 
+  if (size.width <= 425) {
+    return (
+      <>
+        <TextContents textData={textData} size={size} />
+      </>
+    );
+  }
+
   return (
     <>
       <Wrapper>
-        {size.width > 425 && <Logo />}
+        <Logo />
         <HostImage size={size} />
         <TextContents textData={textData} size={size} />
         <DotsBg />

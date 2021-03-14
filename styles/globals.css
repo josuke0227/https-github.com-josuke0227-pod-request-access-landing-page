@@ -20,6 +20,7 @@ h1 {
   --dark-gray: #121725;
   --red: #fb3e3e;
   --navy: #121725;
+  --screen: rgba(18, 23, 37, 0.9);
 }
 
 .strong-font {

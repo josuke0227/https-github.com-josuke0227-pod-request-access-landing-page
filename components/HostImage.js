@@ -3,10 +3,7 @@ import styled from "@emotion/styled";
 const StyledHostImage = styled.img`
   top: 0;
   right: 0;
-
-  @media (max-width: 425px) {
-    display: none;
-  }
+ 
 
 }`;
 
