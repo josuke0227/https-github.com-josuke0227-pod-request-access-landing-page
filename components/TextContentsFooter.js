@@ -10,9 +10,7 @@ const IconWrapper = styled.div`
   }
 `;
 
-export default function TextContentsFooter({ size }) {
-  const mobile = size.width <= 425;
-
+export default function TextContentsFooter({ mobile }) {
   return (
     <IconWrapper>
       <img

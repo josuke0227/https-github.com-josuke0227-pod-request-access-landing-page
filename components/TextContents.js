@@ -45,6 +45,7 @@ const TextWrapper = styled.div`
 `;
 
 const StyledH1 = styled.h1`
+  color: ${(props) => props.color};
   font-weight: 300;
   text-align: left;
   font-size: 52px;
@@ -86,14 +87,14 @@ export default function TextContents({ textData, size }) {
 
   return (
     <Container className="bg-color">
-      {size.width <= 425 && <Logo />}
+      {mobile && <Logo />}
       <TextWrapper>
         <TitleWrapper>
-          <StyledH1 style={{ color: "var(--green)" }}>{greenText}</StyledH1>
-          <StyledH1 style={{ color: "var(--white)" }}>{whiteText}</StyledH1>
+          <StyledH1 color={"var(--green)"}>{greenText}</StyledH1>
+          <StyledH1 color={"var(--white)"}>{whiteText}</StyledH1>
         </TitleWrapper>
         <StyledParagraph>{textData.text}</StyledParagraph>
-        <TextContentsFooter size={size} />
+        <TextContentsFooter size={size} mobile={mobile} />
         <EmailForm
           placeholder={placeholder}
           textData={textData}

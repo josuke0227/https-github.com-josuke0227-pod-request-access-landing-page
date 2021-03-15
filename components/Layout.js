@@ -16,9 +16,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 425px) {
     text-align: center;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    display: block;
     background-image: url("/assets/mobile/image-host.jpg");
     background-size: cover;
   }
