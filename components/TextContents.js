@@ -94,12 +94,25 @@ export default function TextContents({ textData, size }) {
           <StyledH1 color={"var(--white)"}>{whiteText}</StyledH1>
         </TitleWrapper>
         <StyledParagraph>{textData.text}</StyledParagraph>
-        <TextContentsFooter size={size} mobile={mobile} />
-        <EmailForm
-          placeholder={placeholder}
-          textData={textData}
-          mobile={mobile}
-        />
+        {mobile ? (
+          <>
+            <TextContentsFooter size={size} mobile={mobile} />
+            <EmailForm
+              placeholder={placeholder}
+              textData={textData}
+              mobile={mobile}
+            />
+          </>
+        ) : (
+          <>
+            <TextContentsFooter size={size} mobile={mobile} />
+            <EmailForm
+              placeholder={placeholder}
+              textData={textData}
+              mobile={mobile}
+            />
+          </>
+        )}
       </TextWrapper>
     </Container>
   );
