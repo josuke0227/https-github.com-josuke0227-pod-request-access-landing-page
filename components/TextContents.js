@@ -105,12 +105,12 @@ export default function TextContents({ textData, size }) {
           </>
         ) : (
           <>
-            <TextContentsFooter size={size} mobile={mobile} />
             <EmailForm
               placeholder={placeholder}
               textData={textData}
               mobile={mobile}
             />
+            <TextContentsFooter size={size} mobile={mobile} />
           </>
         )}
       </TextWrapper>
