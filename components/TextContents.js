@@ -40,6 +40,7 @@ const TextWrapper = styled.div`
     position: static;
     transform: translateY(0);
     margin-top: 57px;
+    line-height: 38px;
   }
 `;
 

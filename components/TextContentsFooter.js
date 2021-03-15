@@ -6,8 +6,7 @@ const IconWrapper = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 425px) {
-    gap: 2rem;
-    justify-content: center;
+    justify-content: space-around;
   }
 `;
 
